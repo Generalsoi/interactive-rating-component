@@ -9,7 +9,7 @@ const Card = () => {
         <img src={Star} alt="star" />
       </div>
 
-      <div classname="question-div">
+      <div className="question-div">
         <h4>How did we do?</h4>
         <p>Please let us know how we did with your support</p>
         <p>request. All feedback is appreciated to help us</p>
