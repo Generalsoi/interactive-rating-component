@@ -10,3 +10,9 @@
   justify-content: center;
   font-family: "Overpass", sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+  .App {
+    padding: 5%;
+  }
+}

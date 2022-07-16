@@ -74,3 +74,24 @@
   background: #fff;
   color: #fc7614;
 }
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+
+  .question-div p {
+    font-size: 0.9rem;
+  }
+
+  .question-div,
+  .ratings-div,
+  .submit-btn {
+    width: 100%;
+  }
+
+  .ratings-div div {
+    width: 40px;
+    height: 40px;
+  }
+}
