@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./card.css";
 import Star from "../../assets/images/Star.png";
 
-const Card = () => {
+const Card = (props) => {
+  //using array destructuring to pass the rate
+  //and setRate props to this Card component.
+  const { rate, setRate } = props;
+
   return (
     <div className="card">
       <div className="star-div">
