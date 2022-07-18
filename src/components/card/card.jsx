@@ -6,6 +6,14 @@ const Card = (props) => {
   //using array destructuring to pass the rate
   //and setRate props to this Card component.
   const { rate, setRate } = props;
+  console.log(rate);
+
+  const handleRate = (e) => {
+    setRate(e.target.innerHTML);
+    if (rate === e.target.innerHTML) {
+      e.target.style.background = "#7C8798";
+    }
+  };
 
   return (
     <div className="card">
@@ -21,21 +29,11 @@ const Card = (props) => {
       </div>
 
       <div className="ratings-div">
-        <div>
-          <p>1</p>
-        </div>
-        <div>
-          <p>2</p>
-        </div>
-        <div>
-          <p>3</p>
-        </div>
-        <div>
-          <p>4</p>
-        </div>
-        <div>
-          <p>5</p>
-        </div>
+        <div onClick={handleRate}>1</div>
+        <div onClick={handleRate}>2</div>
+        <div onClick={handleRate}>3</div>
+        <div onClick={handleRate}>4</div>
+        <div onClick={handleRate}>5</div>
       </div>
 
       <div className="submit-btn">
