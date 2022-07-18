@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./card.css";
 import Star from "../../assets/images/Star.png";
+import { useNavigate } from "react-router-dom";
 
 const Card = (props) => {
   //using array destructuring to pass the rate
@@ -8,10 +9,19 @@ const Card = (props) => {
   const { rate, setRate } = props;
   console.log(rate);
 
-  const handleClass = () => {
-    return "active ratingsDiv";
+  //initializing the navigate component
+  const navigate = useNavigate();
+
+  //function to handle submit on clicking the submit button
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (rate !== null) {
+      navigate("/thankyou");
+    }
   };
 
+  //function to handle the selection of the rate
   const handleRate = (e) => {
     // if (rate === e.target.innerHTML) {
     //   e.target.style.background = "#7C8798";
@@ -57,7 +67,9 @@ const Card = (props) => {
       </div>
 
       <div className="submit-btn">
-        <button>SUBMIT</button>
+        <button type="submit" onClick={handleSubmit}>
+          SUBMIT
+        </button>
       </div>
     </div>
   );
