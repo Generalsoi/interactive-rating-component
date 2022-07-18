@@ -39,7 +39,7 @@
   margin-top: 1rem;
 }
 
-.ratings-div div {
+.ratings-div .rating {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -50,7 +50,7 @@
   cursor: pointer;
 }
 
-.ratings-div div:hover {
+.ratings-div .rating:hover {
   background: #fc7614;
 }
 
@@ -73,6 +73,10 @@
 .submit-btn button:hover {
   background: #fff;
   color: #fc7614;
+}
+
+.ratings-div .active {
+  background: #7c8798;
 }
 
 @media screen and (max-width: 600px) {

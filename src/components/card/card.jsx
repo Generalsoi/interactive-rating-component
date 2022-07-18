@@ -8,10 +8,20 @@ const Card = (props) => {
   const { rate, setRate } = props;
   console.log(rate);
 
+  const handleClass = () => {
+    return "active ratingsDiv";
+  };
+
   const handleRate = (e) => {
+    // if (rate === e.target.innerHTML) {
+    //   e.target.style.background = "#7C8798";
+    // }
+
     setRate(e.target.innerHTML);
-    if (rate === e.target.innerHTML) {
-      e.target.style.background = "#7C8798";
+    e.target.classList.add("active");
+
+    if (rate !== e.target.innerHTML) {
+      e.target.classList.remove("active");
     }
   };
 
@@ -29,11 +39,21 @@ const Card = (props) => {
       </div>
 
       <div className="ratings-div">
-        <div onClick={handleRate}>1</div>
-        <div onClick={handleRate}>2</div>
-        <div onClick={handleRate}>3</div>
-        <div onClick={handleRate}>4</div>
-        <div onClick={handleRate}>5</div>
+        <div onClick={handleRate} className="rating">
+          1
+        </div>
+        <div onClick={handleRate} className="rating">
+          2
+        </div>
+        <div onClick={handleRate} className="rating">
+          3
+        </div>
+        <div onClick={handleRate} className="rating">
+          4
+        </div>
+        <div onClick={handleRate} className="rating">
+          5
+        </div>
       </div>
 
       <div className="submit-btn">
