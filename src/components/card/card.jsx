@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Card = (props) => {
   //using array destructuring to pass the rate
   //and setRate props to this Card component.
-  const { rate, setRate } = props;
+  const { rate, setRate, handleRate } = props;
   console.log(rate);
 
   //initializing the navigate component
@@ -22,18 +22,18 @@ const Card = (props) => {
   };
 
   //function to handle the selection of the rate
-  const handleRate = (e) => {
-    // if (rate === e.target.innerHTML) {
-    //   e.target.style.background = "#7C8798";
-    // }
+  // const handleRate = (e) => {
+  //   // if (rate === e.target.innerHTML) {
+  //   //   e.target.style.background = "#7C8798";
+  //   // }
 
-    setRate(e.target.innerHTML);
-    e.target.classList.add("active");
+  //   setRate(e.target.innerHTML);
+  //   e.target.classList.add("active");
 
-    if (rate !== e.target.innerHTML) {
-      e.target.classList.remove("active");
-    }
-  };
+  //   if (rate !== e.target.innerHTML) {
+  //     e.target.classList.remove("active");
+  //   }
+  // };
 
   return (
     <div className="card">
