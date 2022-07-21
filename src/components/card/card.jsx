@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 const Card = (props) => {
   //using array destructuring to pass the rate
   //and setRate props to this Card component.
-  const { rate, setRate, handleRate } = props;
-  console.log(rate);
+  const { rate, setRate } = props;
+  console.log(rate, "here");
+
+  const ratesArray = [1, 2, 3, 4, 5];
 
   //initializing the navigate component
   const navigate = useNavigate();
@@ -49,21 +51,15 @@ const Card = (props) => {
       </div>
 
       <div className="ratings-div">
-        <div onClick={handleRate} className="rating">
-          1
-        </div>
-        <div onClick={handleRate} className="rating">
-          2
-        </div>
-        <div onClick={handleRate} className="rating">
-          3
-        </div>
-        <div onClick={handleRate} className="rating">
-          4
-        </div>
-        <div onClick={handleRate} className="rating">
-          5
-        </div>
+        {/*  */}
+        {ratesArray.map((userRate) => (
+          <div
+            onClick={() => setRate(userRate)}
+            className={`rating ${userRate === rate && "active"}`}
+          >
+            {userRate}
+          </div>
+        ))}
       </div>
 
       <div className="submit-btn">

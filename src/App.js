@@ -8,18 +8,13 @@ function App() {
   const [rate, setRate] = useState(null);
 
   //function to handle the selection of the rate
-  const handleRate = (e) => {
-    // if (rate === e.target.innerHTML) {
-    //   e.target.style.background = "#7C8798";
-    // }
+  // const handleRate = (rate) => {
+  //   // if (rate === e.target.innerHTML) {
+  //   //   e.target.style.background = "#7C8798";
+  //   // }
 
-    setRate(e.target.innerHTML);
-    e.target.classList.add("active");
-
-    if (rate !== e.target.innerHTML) {
-      e.target.classList.remove("active");
-    }
-  };
+  //   setRate(rate);
+  // };
 
   return (
     <BrowserRouter>
@@ -28,7 +23,11 @@ function App() {
           <Route
             path="/"
             element={
-              <Card rate={rate} setRate={setRate} handleRate={handleRate} />
+              <Card
+                rate={rate}
+                setRate={setRate}
+                // handleRate={(rate) => setRate(rate)}
+              />
             }
           />
           <Route path="thankyou" element={<Thankyou rate={rate} />} />
